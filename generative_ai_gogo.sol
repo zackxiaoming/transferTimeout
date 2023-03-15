@@ -558,13 +558,13 @@ contract GAI is Context, IERC20, Ownable {
         }
     }
 
-    function addToTimeoutWhitelist(address[] list) external onlyOwner() {
+    function addToTimeoutWhitelist(address[] calldata list) external onlyOwner() {
         for (uint256 i = 0; i < list.length; i++) {
             _timeoutWhitelist[list[i]] = true;
         }
     }
 
-    function removeFromTimeoutWhitelist(address[] list) external onlyOwner() {
+    function removeFromTimeoutWhitelist(address[] calldata list) external onlyOwner() {
         for (uint256 i = 0; i < list.length; i++) {
             _timeoutWhitelist[list[i]] = false;
         }
